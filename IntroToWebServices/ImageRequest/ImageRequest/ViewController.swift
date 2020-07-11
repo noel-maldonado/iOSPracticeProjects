@@ -21,21 +21,25 @@ class ViewController: UIViewController {
     }
 
     @IBAction func handleLoadImageButton(_ sender: UIButton) {
+        
         guard let imageURL = URL(string: imageLocation) else {
             print("Cannot create URL")
             return
         }
+        
         let task = URLSession.shared.dataTask(with: imageURL) {
          (data, respone, error) in
+            
             guard let data = data else {
                 print("no data, or there was an error")
                 return
             }
+            
             let downloadedImage = UIImage(data: data)
+            
             DispatchQueue.main.async {
                 self.image.image = downloadedImage
             }
-            
         }
         task.resume()
         
