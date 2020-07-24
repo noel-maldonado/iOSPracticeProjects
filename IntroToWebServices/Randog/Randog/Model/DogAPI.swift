@@ -58,4 +58,8 @@ class DogAPI {
         task.resume()
     }
     
+    
+    class func requestBreedsList() {
+        
+    }
 }

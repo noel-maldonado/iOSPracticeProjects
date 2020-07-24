@@ -11,11 +11,16 @@ import UIKit
 class ViewController: UIViewController {
 
     
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
+    
+    let breeds: [String] = ["Breed One", "Breed Two"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        pickerView.dataSource = self
+        pickerView.delegate = self
         
         DogAPI.requestRandomImage(completionHandler: handleRanomImageResponse(imageData:error:))
 
@@ -35,5 +40,25 @@ class ViewController: UIViewController {
     }
 
 
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return breeds.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return breeds[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        DogAPI.requestRandomImage(completionHandler: handleRanomImageResponse(imageData:error:))
+    }
+    
 }
 
+
+extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+}
