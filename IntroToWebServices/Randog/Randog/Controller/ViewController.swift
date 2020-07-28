@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var imageView: UIImageView!
     
-    let breeds: [String] = ["greyhound", "poodle"]
+    var breeds: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,8 @@ class ViewController: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         
-
+        DogAPI.requestBreedsList(completionHandler: handleBreedsListResponse(breeds:error:))
+        
         }
         
     func handleRanomImageResponse(imageData: DogImage?, error: Error?) {
@@ -38,6 +39,13 @@ class ViewController: UIViewController {
         }
     }
 
+    func handleBreedsListResponse(breeds: [String], error: Error?) {
+        self.breeds = breeds
+        DispatchQueue.main.async {
+            self.pickerView.reloadAllComponents()
+        }
+    }
+    
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
