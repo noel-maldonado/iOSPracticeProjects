@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320C48772503D6C300E05E37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320C48762503D6C300E05E37 /* MapViewController.swift */; };
 		3211E76324DB35D6000DC8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211E76224DB35D6000DC8A3 /* AppDelegate.swift */; };
 		3211E76524DB35D6000DC8A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211E76424DB35D6000DC8A3 /* SceneDelegate.swift */; };
 		3211E76724DB35D6000DC8A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211E76624DB35D6000DC8A3 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		320C48762503D6C300E05E37 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3211E75F24DB35D6000DC8A3 /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3211E76224DB35D6000DC8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3211E76424DB35D6000DC8A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				3211E76B24DB35DA000DC8A3 /* Assets.xcassets */,
 				3211E76D24DB35DA000DC8A3 /* LaunchScreen.storyboard */,
 				3211E77024DB35DA000DC8A3 /* Info.plist */,
+				320C48762503D6C300E05E37 /* MapViewController.swift */,
 			);
 			path = WorldTrotter;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				3211E76724DB35D6000DC8A3 /* ViewController.swift in Sources */,
 				3211E76324DB35D6000DC8A3 /* AppDelegate.swift in Sources */,
 				3211E76524DB35D6000DC8A3 /* SceneDelegate.swift in Sources */,
+				320C48772503D6C300E05E37 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
