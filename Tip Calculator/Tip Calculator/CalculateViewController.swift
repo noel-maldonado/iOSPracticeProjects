@@ -51,7 +51,7 @@ class CalculateViewController: UIViewController {
             tenPctButton.isSelected = false
             twentyPctButton.isSelected = false
         }
-        print("Tip Percentage : \(tipPct!)")
+//        print("Tip Percentage : \(tipPct!)")
     }
     
     
@@ -66,7 +66,7 @@ class CalculateViewController: UIViewController {
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         splitNumberLabel.text = String(sender.value)
         split = sender.value
-        print("Split: \(split!)")
+//        print("Split: \(split!)")
     }
     
     @IBAction func billAmountChanged(_ sender: UITextField) {
@@ -84,15 +84,15 @@ class CalculateViewController: UIViewController {
            //create a reference to new view Controller
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.total = String(format: "%.2f",((billTotal! * tipPct!) / split!))
-            destinationVC.settingsMessage = "Split between \(Int(split!)) people, with \(Int(tipPct!.truncatingRemainder(dividingBy: 1.0)))% tip."
+            destinationVC.settingsMessage = "Split between \(Int(split!)) people, with \(Int(((tipPct! - 1) * 100).rounded()))% tip."
         }
     }
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         billTextField.resignFirstResponder()
-        if billTotal != nil {
-            print("Bill Total: \(billTotal!)")
-        }
+//        if billTotal != nil {
+//            print("Bill Total: \(billTotal!)")
+//        }
     }
     
 }
