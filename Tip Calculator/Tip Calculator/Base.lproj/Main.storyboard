@@ -27,7 +27,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="Edr-Tc-O0Y">
                                         <rect key="frame" x="130" y="311" width="154.5" height="32"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fap-N0-x8P">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fap-N0-x8P">
                                                 <rect key="frame" x="0.0" y="0.0" width="17.5" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="17.5" id="sA2-PI-3NC"/>
@@ -36,8 +36,11 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-z0-2kb">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="RAC-z0-2kb">
                                                 <rect key="frame" x="60.5" y="0.0" width="94" height="32"/>
+                                                <connections>
+                                                    <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="A4R-vM-0KO"/>
+                                                </connections>
                                             </stepper>
                                         </subviews>
                                         <constraints>
@@ -55,6 +58,9 @@
                                         <state key="normal" title="Calculate">
                                             <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="taU-bZ-K4Q"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select tip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-jr-o55">
                                         <rect key="frame" x="60" y="55" width="97" height="29"/>
@@ -69,16 +75,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="43" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="0%"/>
+                                                <connections>
+                                                    <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vpz-Ku-AX3"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrH-yX-rjL">
                                                 <rect key="frame" x="110" y="0.0" width="57" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="10%"/>
+                                                <connections>
+                                                    <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GGs-qE-9XU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRl-OT-D4t">
                                                 <rect key="frame" x="234" y="0.0" width="60" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="20%"/>
+                                                <connections>
+                                                    <action selector="tipChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UCE-wB-n3a"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -111,9 +126,13 @@
                                 <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="billAmountChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="aeP-7z-1Zv"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="GA4-51-eAa" firstAttribute="top" secondItem="26t-Dy-DaF" secondAttribute="bottom" constant="33.5" id="Cf3-5o-NMt"/>
                             <constraint firstItem="26t-Dy-DaF" firstAttribute="top" secondItem="3RE-gx-WtG" secondAttribute="bottom" constant="24" id="ECK-C7-z5q"/>
@@ -126,18 +145,35 @@
                             <constraint firstItem="GA4-51-eAa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wSX-mY-SQw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NU0-pS-q3j" appends="YES" id="sTU-au-YVl"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="billTextField" destination="26t-Dy-DaF" id="BAs-Es-gRL"/>
+                        <outlet property="calculateButton" destination="grB-QZ-Udo" id="nuL-0b-ay3"/>
+                        <outlet property="splitNumberLabel" destination="Fap-N0-x8P" id="H3X-KT-HCm"/>
+                        <outlet property="tenPctButton" destination="wrH-yX-rjL" id="Ea3-R0-cEO"/>
+                        <outlet property="twentyPctButton" destination="MRl-OT-D4t" id="qiE-8f-5ND"/>
+                        <outlet property="zeroPctButton" destination="vQV-ZQ-zFk" id="Dlg-ti-fD8"/>
+                        <segue destination="1Db-Ce-Nvt" kind="show" identifier="goToResult" id="mON-JQ-kYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NU0-pS-q3j">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="LRH-RC-2eA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="5vw-UA-Pj1">
             <objects>
-                <viewController id="1Db-Ce-Nvt" sceneMemberID="viewController">
+                <viewController id="1Db-Ce-Nvt" customClass="ResultViewController" customModule="Tip_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8kV-ef-Pxb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-s4-vpE">
@@ -166,7 +202,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc5-V3-teq">
-                                <rect key="frame" x="119.5" y="802" width="175" height="50"/>
+                                <rect key="frame" x="119.5" y="748" width="175" height="50"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="9vu-Cj-hBU"/>
@@ -176,6 +212,9 @@
                                 <state key="normal" title="Recalculate">
                                     <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="1Db-Ce-Nvt" eventType="touchUpInside" id="bLQ-aA-ppQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split between 2 people, with 10% tip." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3SJ-Xp-MTh">
                                 <rect key="frame" x="44" y="270" width="326" height="140"/>
@@ -200,6 +239,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="obU-qW-QYF"/>
                     </view>
+                    <navigationItem key="navigationItem" id="06c-ND-nhe"/>
+                    <connections>
+                        <outlet property="settingsLabel" destination="3SJ-Xp-MTh" id="R3L-RS-dgx"/>
+                        <outlet property="totalLabel" destination="Rut-Jh-hPW" id="fgz-pg-10a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxw-sW-cDH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
