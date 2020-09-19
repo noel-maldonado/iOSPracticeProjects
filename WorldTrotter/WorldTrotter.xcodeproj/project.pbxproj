@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32042718251680FE00E830E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3204271A251680FE00E830E9 /* Localizable.strings */; };
 		320C48772503D6C300E05E37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320C48762503D6C300E05E37 /* MapViewController.swift */; };
 		3211E76324DB35D6000DC8A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211E76224DB35D6000DC8A3 /* AppDelegate.swift */; };
 		3211E76524DB35D6000DC8A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3211E76424DB35D6000DC8A3 /* SceneDelegate.swift */; };
@@ -17,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3204270E251676C000E830E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		32042713251677B700E830E9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		32042719251680FE00E830E9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3204271D2516814200E830E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		320C48762503D6C300E05E37 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3211E75F24DB35D6000DC8A3 /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3211E76224DB35D6000DC8A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 			children = (
 				3211E76624DB35D6000DC8A3 /* ConversionViewController.swift */,
 				320C48762503D6C300E05E37 /* MapViewController.swift */,
+				3204271A251680FE00E830E9 /* Localizable.strings */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -120,6 +126,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 3211E75624DB35D6000DC8A3;
 			productRefGroup = 3211E76024DB35D6000DC8A3 /* Products */;
@@ -137,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3211E76F24DB35DA000DC8A3 /* LaunchScreen.storyboard in Resources */,
+				32042718251680FE00E830E9 /* Localizable.strings in Resources */,
 				3211E76C24DB35DA000DC8A3 /* Assets.xcassets in Resources */,
 				3211E76A24DB35D6000DC8A3 /* Main.storyboard in Resources */,
 			);
@@ -159,10 +167,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		3204271A251680FE00E830E9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32042719251680FE00E830E9 /* es */,
+				3204271D2516814200E830E9 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		3211E76824DB35D6000DC8A3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3211E76924DB35D6000DC8A3 /* Base */,
+				3204270E251676C000E830E9 /* en */,
+				32042713251677B700E830E9 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -182,6 +201,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -242,6 +262,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
