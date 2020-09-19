@@ -39,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3204270B251533FA00E830E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3211E76624DB35D6000DC8A3 /* ConversionViewController.swift */,
+				320C48762503D6C300E05E37 /* MapViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		3211E75624DB35D6000DC8A3 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +69,11 @@
 			children = (
 				3211E76224DB35D6000DC8A3 /* AppDelegate.swift */,
 				3211E76424DB35D6000DC8A3 /* SceneDelegate.swift */,
-				3211E76624DB35D6000DC8A3 /* ConversionViewController.swift */,
+				3204270B251533FA00E830E9 /* Controller */,
 				3211E76824DB35D6000DC8A3 /* Main.storyboard */,
 				3211E76B24DB35DA000DC8A3 /* Assets.xcassets */,
 				3211E76D24DB35DA000DC8A3 /* LaunchScreen.storyboard */,
 				3211E77024DB35DA000DC8A3 /* Info.plist */,
-				320C48762503D6C300E05E37 /* MapViewController.swift */,
 			);
 			path = WorldTrotter;
 			sourceTree = "<group>";
