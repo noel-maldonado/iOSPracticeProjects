@@ -45,6 +45,8 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         print("CoversionViewController loaded its view.")
         
         updateCelsiusLabel()
+        self.view.backgroundColor = randomBackgroundColor()
+
     }
     
     
@@ -88,7 +90,19 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         
     }
 
+    //Silver Challenge: Different Background Colors | Chapter 4
+//    func randomBackgroundColor() -> UIColor {
+//        let colors: [UIColor] = [.cyan, .darkGray, .gray, .blue, .orange, .brown, .green, .purple, .magenta]
+//        return colors.randomElement()!
+//    }
     
+    
+    //    Silver Challenge | Chapter 3
+    //    func createGradientLayer() -> CALayer {
+    //        layer = CAGradientLayer()
+    //        layer.colors = [UIColor.black.cgColor, UIColor.gray.cgColor,UIColor.white.cgColor, UIColor.black.cgColor]
+    //        return layer
+    //    }
     
 }
 
