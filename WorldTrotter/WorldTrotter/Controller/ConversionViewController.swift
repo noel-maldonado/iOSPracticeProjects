@@ -45,7 +45,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         print("CoversionViewController loaded its view.")
         
         updateCelsiusLabel()
-        self.view.backgroundColor = randomBackgroundColor()
+//        self.view.backgroundColor = randomBackgroundColor()
 
     }
     
