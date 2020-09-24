@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginTapped(_ sender: UIButton) {
+        TMDBClient.getRequestToken(completion: handleRequestTokenResponse(success:error:))
         performSegue(withIdentifier: "completeLogin", sender: nil)
     }
     
@@ -30,4 +31,9 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: "completeLogin", sender: nil)
     }
     
+    func handleRequestTokenResponse(success: Bool, error: Error?) {
+        if success {
+            print(TMDBClient.Auth.requestToken)
+        }
+    }
 }
