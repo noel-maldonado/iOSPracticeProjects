@@ -8,4 +8,13 @@
 
 import Foundation
 
+struct SessionResponse: Codable {
+    let succes: Bool
+    let sessionID: String
+    
+    enum CodingKeys: String, CodingKey {
+        case succes
+        case sessionID = "session_id"
+    }
+}
 

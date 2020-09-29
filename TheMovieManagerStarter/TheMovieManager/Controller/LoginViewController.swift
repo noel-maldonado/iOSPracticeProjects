@@ -24,7 +24,6 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginTapped(_ sender: UIButton) {
         TMDBClient.getRequestToken(completion: handleRequestTokenResponse(success:error:))
-        performSegue(withIdentifier: "completeLogin", sender: nil)
     }
     
     @IBAction func loginViaWebsiteTapped() {
@@ -34,6 +33,32 @@ class LoginViewController: UIViewController {
     func handleRequestTokenResponse(success: Bool, error: Error?) {
         if success {
             print(TMDBClient.Auth.requestToken)
+            DispatchQueue.main.async {
+                TMDBClient.login(username: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "", completion: self.handleLoginResponse(succes:error:))
+            }
         }
     }
+    
+    func handleLoginResponse(succes: Bool, error: Error?) {
+        print(TMDBClient.Auth.requestToken)
+        print("HANDLE LOGIN RESPONSE IS CALLED ******************")
+        if succes {
+            print("LOGIN RESPOSNE SUCCESFUL ***************")
+            TMDBClient.createSessionId(completion: handleSessionRepsonse(success:error:))
+            
+        } else {
+            print("LOGIN RESPONE UNSECCESFUL **************")
+        }
+    }
+    
+    func handleSessionRepsonse(success: Bool, error: Error?) {
+        print("HANDLE SESSION RESPONSE IS CALLED ************")
+        if success {
+            print("session Successful **********************")
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "completeLogin", sender: nil)
+            }
+        }
+    }
+    
 }
