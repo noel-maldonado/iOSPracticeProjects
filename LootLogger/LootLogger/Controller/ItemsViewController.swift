@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ItemsViewController.swift
 //  LootLogger
 //
 //  Created by Noel Maldonado on 9/28/20.
@@ -11,6 +11,36 @@ class ItemsViewController: UITableViewController {
 
     var itemStore: ItemStore!
     
+    @IBAction func addNewItem(_ sender: UIButton) {
+        // create a new item and add it to the store
+        let newItem = itemStore.createItem()
+        
+        // figure out where that item is in the Array
+        if let index = itemStore.allitems.firstIndex(of: newItem) {
+            let indexPath = IndexPath(row: index, section: 0)
+            
+            //insert this new row into the table
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
+        
+        
+    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIButton) {
+        if isEditing {
+            //change text of button to infrom user of state
+            sender.setTitle("Edit", for: .normal)
+            
+            // turn off editing mode
+            setEditing(false, animated: true)
+        } else {
+            //change text of button to inform user of state
+            sender.setTitle("Done", for: .normal)
+            
+            // enter editing mode
+            setEditing(true, animated: false)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
